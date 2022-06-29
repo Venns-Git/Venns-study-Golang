@@ -17,13 +17,13 @@ func myFunc(arg interface{}) {
 	}
 }
 
-type Book struct {
+type Message struct {
 	auth string
 }
 
 func main() {
-	book := Book{"Golang"}
-	myFunc(book)
+	m := Message{"Golang"}
+	myFunc(m)
 	myFunc(100)
 	myFunc("hello")
 }
