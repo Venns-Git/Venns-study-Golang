@@ -13,13 +13,21 @@ func main() {
 		close(c)
 	}()
 
-	for {
-		// ok表示channel是否关闭,true为未关闭
-		if data, ok := <-c; ok {
-			fmt.Println(data)
-		} else {
-			break
+	/*
+		1.采用死循环
+		for {
+			// ok表示channel是否关闭,true为未关闭
+			if data, ok := <-c; ok {
+				fmt.Println(data)
+			} else {
+				break
+			}
 		}
+	*/
+	// 2. 使用range
+	for data := range c {
+		fmt.Println(data)
 	}
+
 	fmt.Println("main end")
 }
