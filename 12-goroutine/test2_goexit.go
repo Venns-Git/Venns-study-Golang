@@ -19,7 +19,6 @@ func main() {
 		}()
 		fmt.Println("A")
 	}()
-
 	// 死循环
 	for {
 		time.Sleep(1 * time.Second)
