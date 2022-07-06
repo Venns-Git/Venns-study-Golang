@@ -24,6 +24,7 @@ func main() {
 
 	go func() {
 		for i := 0; i < 6; i++ {
+			// 如果c中没有数据,则会阻塞
 			fmt.Println(<-c)
 		}
 		quit <- 0
